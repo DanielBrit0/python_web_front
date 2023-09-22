@@ -11,7 +11,7 @@ export const todoAPI = rtkApi.injectEndpoints({
                 const search = name.length > 0 ? `?name=${name}` : ''
 
                 return {
-                    url: 'tarefa/' + search,
+                    url: 'tarefas/' + search,
                     method: "GET",
 
                 }
@@ -25,12 +25,13 @@ export const todoAPI = rtkApi.injectEndpoints({
             query: ({ name }) => {
 
                 const data = {
-                    name: name,
-                    done: true,
+                    nome: name,
+                    descricao: "Sem descrição",
+                    feito: true,
                     delete: false
                 }
                 return {
-                    url: 'tarefa/',
+                    url: 'tarefas/',
                     method: "POST",
                     data,
 
@@ -45,11 +46,11 @@ export const todoAPI = rtkApi.injectEndpoints({
 
                 const data = {
 
-                    done: false,
+                    feito: false,
 
                 }
                 return {
-                    url: 'tarefa/' + id + "/",
+                    url: 'tarefas/' + id + "/",
                     method: "PATCH",
                     data,
 
@@ -64,11 +65,11 @@ export const todoAPI = rtkApi.injectEndpoints({
 
                 const data = {
 
-                    done: true,
+                    feito: true,
 
                 }
                 return {
-                    url: 'tarefa/' + id + "/",
+                    url: 'tarefas/' + id + "/",
                     method: "PATCH",
                     data,
 
@@ -83,7 +84,7 @@ export const todoAPI = rtkApi.injectEndpoints({
 
 
                 return {
-                    url: 'tarefa/' + id + "/",
+                    url: 'tarefas/' + id + "/",
                     method: "delete",
 
 

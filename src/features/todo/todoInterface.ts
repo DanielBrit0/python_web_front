@@ -1,13 +1,13 @@
 export interface TodoGet {
     id: string;
-    name: string;
+    nome: string;
     created: string;
     __v: number;
-    done: boolean;
+    feito: boolean;
 }
 export interface TodoPost {
-    name: string;
-    done?: boolean;
+    nome: string;
+    feito?: boolean;
 }
 
 export interface TodoState {

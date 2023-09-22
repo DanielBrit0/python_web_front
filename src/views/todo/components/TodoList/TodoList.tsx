@@ -41,7 +41,7 @@ const TodoList = () => {
         return list?.map(todo => (
             <Tabela key={todo.id}>
 
-                <td className={!todo.done ? 'markAsDone' : ''}>{todo.name}</td>
+                <td className={!todo.feito ? 'markAsDone' : ''}>{todo.nome}</td>
                 <td style={{ float: 'right' }}>
                     <IconButton
                         style="success"
@@ -50,7 +50,7 @@ const TodoList = () => {
                             await markAsDone(todo)
                             refetch()
                         }}
-                        hide={!todo.done}
+                        hide={!todo.feito}
                     />
                     <IconButton
                         style="warning"
@@ -59,14 +59,14 @@ const TodoList = () => {
                             await markAsPending(todo)
                             refetch()
                         }}
-                        hide={todo.done}
+                        hide={todo.feito}
                     />
 
                     <IconButton
                         style="danger"
                         icon="trash-o"
                         onClick={() => deleteChore(todo)}
-                        hide={todo.done}
+                        hide={todo.feito}
                     />
                 </td>
             </Tabela>
